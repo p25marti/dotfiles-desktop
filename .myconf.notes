@@ -1,0 +1,26 @@
+When looking around for program to store dotfiles, I came accross a hackernews comment
+that suggested setting up a git repo in a directory called .myconf where we can access 
+the git repo using the alias "config". The following is an exerpt from the hacker news 
+post:
+
+I use:
+
+    git init --bare $HOME/.myconf
+    alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+    config config status.showUntrackedFiles no
+
+where my ~/.myconf directory is a git bare repository. Then any file within the home 
+folder can be versioned with normal commands like:
+
+    config status
+    config add .vimrc
+    config commit -m "Add vimrc"
+    config add .config/redshift.conf
+    config commit -m "Add redshift config"
+    config push
+
+And so one…
+
+No extra tooling, no symlinks, files are tracked on a version control system, you can 
+use different branches for different computers, you can replicate you configuration 
+easily on new installation.
