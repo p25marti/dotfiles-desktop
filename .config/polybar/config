@@ -14,7 +14,6 @@
 ;==========================================================
 
 [color]
-
 trans = #00000000
 white = #FFFFFF
 black = #000000
@@ -37,28 +36,6 @@ shade7 = #81C784
 shade8 = #A5D6A7
 ashade8 = #2C2C2C
 
-## Material Colors
-
-red = #e53935
-pink = #d81b60
-purple = #8e24aa
-deep-purple = #5e35b1
-indigo = #3949ab
-blue = #1e88e5
-light-blue = #039be5
-cyan = #00acc1
-teal = #00897b
-green = #43a047
-light-green = #7cb342
-lime = #c0ca33
-yellow = #fdd835
-amber = #ffb300
-orange = #fb8c00
-deep-orange = #f4511e
-brown = #6d4c41
-grey = #757575
-blue-gray = #546e7a
-
 ;==========================================================
 
 [bar/main]
@@ -67,34 +44,36 @@ height = 18
 offset-x = 2%
 offset-y = 2%
 bottom = false
-fixed-center = false
-line-size = 2
+fixed-center = true
+line-size = 1
 
 background = ${color.bg}
 foreground = ${color.fg}
 
+font-0 = "Hack::pixelsize=10;3"
+font-1 = "Fantasque Sans Mono:pixelsize=10;3"
+font-2 = "Iosevka Nerd Font:pixelsize=13;3"
+font-3 = "Noto Music:pixelsize=10;3"
+font-4 = "Noto Sans Symbols2:pixelsize=10;3"
 
-font-0 = Hack:pixelsize=10;3
-font-1 = Fantasque Sans Mono:pixelsize=10;3
-font-2 = Noto Sans Symbols2:pixelsize=10;3
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
 
 [bar/primary]
 inherit = bar/main
 monitor = DVI-D-0
-modules-left = i3
-modules-right = volume date
+modules-left = i3 
+modules-center = spotify 
+modules-right = vpn memory cpu volume network date
 
 [bar/secondary]
 inherit = bar/main
 monitor = HDMI-A-1
 modules-left = i3
+modules-center = spotify
 
+;==========================================================
+;== Module Location ========================================================
+
+ 
 ;== Modules ========================================================
 
 [module/i3]
@@ -107,133 +86,19 @@ wrapping-scroll = false
 reverse-scroll = false
 label-focused = %index%
 label-unfocused = %index%
-label-focused-underline = ${color.green}
+label-focused-underline = ${color.shade2}
 label-focused-padding = 1
 label-unfocused-padding = 1
 
-;ws-icon-0 = 1;🎜
-;ws-icon-1 = 2;🎜
-;ws-icon-2 = 3;🎜
-;ws-icon-3 = 4;🎜
-;ws-icon-4 = 5;🎜
-
-[module/arch]
-type = custom/text
-content = 
-;alt icons = 
-content-padding = 2
-content-background = ${color.shade1}
-content-foreground = ${color.fg}
-click-left = rmenu_1
-click-right = rmenu_wi_1
-
-[module/workspaces]
-type = internal/xworkspaces
-pin-workspaces = false
-enable-click = true
-enable-scroll = true
-format-padding = 1
-
-;icon-0 = 1;❶
-;icon-1 = 2;❷
-;icon-2 = 3;❸
-;icon-3 = 4;❹
-;icon-4 = 5;❺
-;icon-5 = 6;❻
-;icon-6 = 7;❼
-;icon-7 = 8;❽
-;icon-8 = 9;❾
-;icon-9 = 10;❿
-
-icon-default = 
-
-format = <label-state>
-format-background = ${color.shade2}
-label-active = 
-label-occupied = 
-label-urgent = 
-label-empty = 
-
-label-empty-padding = 1
-label-active-padding = 1
-label-urgent-padding = 1
-label-occupied-padding = 1
-
-label-empty-foreground = ${color.fg}
-label-active-foreground = ${color.acolor}
-label-urgent-foreground = ${color.curgent}
-label-occupied-foreground = ${color.coccupied}
-
-;==========================================================
-
-[module/mpd]
-type = internal/mpd
-format-online = <toggle> <label-song> 
-;format-online =  <label-song> 
-;alt icons =   
-format-online-foreground = ${color.ashade8}
-format-online-background = ${color.shade8}
-format-online-padding = 2
-
-icon-play = 喇
-icon-pause = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-;==========================================================
-
-[module/battery]
-type = internal/battery
-full-at = 99
-time-format = %H:%M
-battery = BAT1
-adapter = AC
-format-charging = <animation-charging> <label-charging>
-format-charging-background = ${color.shade5}
-format-charging-padding = 2
-label-charging = %percentage%%
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-background = ${color.shade5}
-format-discharging-padding = 2
-label-discharging = %percentage%%
-format-full = <label-full>
-
-format-full-prefix = " "
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-5 = 
-ramp-capacity-6 = 
-ramp-capacity-7 = 
-ramp-capacity-8 = 
-ramp-capacity-9 = 
-
-ramp-capacity-0-foreground = ${color.red}
-ramp-capacity-1-foreground = ${color.red}
-ramp-capacity-foreground   = ${color.fg}
-bar-capacity-width = 10
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-5 = 
-animation-charging-6 = 
-
-animation-charging-framerate = 750
 
 [module/volume]
 type = internal/alsa
 format-volume = <ramp-volume> <label-volume>
 format-volume-padding = 2
-format-volume-background = ${color.shade6}
+format-volume-background = ${color.shade3}
 label-volume = %percentage%%
 label-muted = "婢"
-label-muted-background = ${color.shade6}
+label-muted-background = ${color.shade3}
 label-muted-padding = 2
 
 ramp-volume-0 = 奄
@@ -246,11 +111,9 @@ ramp-volume-6 = 墳
 
 [module/network]
 type = custom/script
-exec = check-network
-format-background = ${color.shade4}
+exec = ~/.config/polybar/scripts/check-network
+format-background = ${color.shade2}
 format-padding = 2
-;click-left = networkmanager_dmenu &
-;click-right = networkmanager_dmenu &
 tail = true
 
 [module/date]
@@ -258,15 +121,53 @@ type = internal/date
 interval = 30
 label =  %time%
 label-padding = 2
-label-background = ${color.shade3}
+label-background = ${color.shade1}
 time =  %I:%M %p
 time-alt =  %Y-%m-%d
 
-[module/powermenu]
-type = custom/text
-content = Power
-content-padding = 2
-content-background = ${color.shade2}
-content-foreground = ${color.fg}
-click-left = pmenu_1
-click-right = pmenu_1
+[module/cpu]
+type = internal/cpu
+format = <label> <ramp-coreload>
+format-padding = 2
+format-background = ${color.shade4}
+
+; Available tokens:
+;   %percentage% (default) - total cpu load averaged over all cores
+;   %percentage-sum% - Cumulative load on all cores
+;   %percentage-cores% - load percentage for each core
+;   %percentage-core[1-9]% - load percentage for specific core
+label = CPU
+
+; Spacing between individual per-core ramps
+ramp-coreload-spacing = 1
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
+
+[module/memory]
+type = internal/memory
+interval = 3
+format-padding = 2
+format-background = ${color.shade5}
+label = RAM %gb_used%/%gb_total%
+
+[module/vpn]
+type = custom/script
+exec = ~/.config/polybar/scripts/vpn
+interval = 3
+label-padding = 2
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = "🎧 "
+format = <label>
+exec = python ~/.config/polybar/scripts/spotify_status.py -f '{artist}: {song}'
+
+;== EOF ========================================================
+; vim:ft=dosini

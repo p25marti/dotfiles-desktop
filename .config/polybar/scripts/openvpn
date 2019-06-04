@@ -1,8 +1,0 @@
-#!/bin/sh
-
-SERVICE="openvpn"
-if pgrep -x "$SERVICE" &> /dev/null; then
-    echo "VPN ONLINE"
-else
-    echo ""
-fi
