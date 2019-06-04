@@ -37,6 +37,8 @@ alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 # alias that opens a file with the default program that is assigned to its mimetype.
 alias open='xdg-open'
 
+alias owl='ssh paul@dev'
+
 # sourcing autojump script
 source /etc/profile.d/autojump.bash 
 
