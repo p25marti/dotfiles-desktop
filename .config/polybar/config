@@ -84,12 +84,17 @@ enable-click = false
 enable-scroll = false
 wrapping-scroll = false
 reverse-scroll = false
-label-focused = %index%
-label-unfocused = %index%
-label-focused-underline = ${color.shade2}
-label-focused-padding = 1
-label-unfocused-padding = 1
 
+label-focused = %index%
+label-focused-background = ${color.shade2}
+label-focused-padding = 1
+
+label-visible = %index%
+label-visible-padding = 1
+label-visible-background = ${color.shade2}
+
+label-unfocused = %index%
+label-unfocused-padding = 1
 
 [module/volume]
 type = internal/alsa
