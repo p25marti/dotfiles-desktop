@@ -200,11 +200,12 @@ mode "resize" {
 }
 
 # choose an arandr profile (chooses between single monitor or dual monitor)
-mode "choose display: 1(single) or 2(dual)" {
+mode "choose display: 1(single), 2(dual) or 3(portrait)" {
         # These bindings trigger as soon as you enter the resize mode
 
         bindsym 1 exec autorandr single;mode "default"
         bindsym 2 exec autorandr dual;mode "default"
+        bindsym 3 exec autorandr portrait;mode "default"
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -213,7 +214,7 @@ mode "choose display: 1(single) or 2(dual)" {
 }
 
 
-bindsym $mod+colon mode "choose display: 1(single) or 2(dual)"
+bindsym $mod+colon mode "choose display: 1(single), 2(dual) or 3(portrait)"
 bindsym $mod+r mode "resize"
 
 # overhead
