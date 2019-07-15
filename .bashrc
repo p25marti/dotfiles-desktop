@@ -83,3 +83,6 @@ export TERM=xterm-color
 
 # function for opening books as a background process
 background() { xdg-open "$@" &>/dev/null & }
+
+# https://github.com/brianm/venv
+source ~/.config/venv.bash
