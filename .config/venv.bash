@@ -27,7 +27,7 @@ venv() {
         "destroy")
             rm -rf "$VENV_DIR/$2";;
         "use")
-            source .venv/$2/bin/activate;;
+            source "$VENV_DIR/$2/bin/activate";;
         "shell")
             $SHELL -i <<< "source .venv/$2/bin/activate; exec </dev/tty";;
         "ls")
