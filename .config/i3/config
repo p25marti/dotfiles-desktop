@@ -97,7 +97,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Custom binds
-bindsym $mod+backslash exec i3lock-fancy # lock screen with black background
+bindsym $mod+backslash exec betterlockscreen -l dim
 
 ## For music
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
