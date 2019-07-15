@@ -48,7 +48,25 @@ alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 # alias that opens a file with the default program that is assigned to its mimetype.
 alias open='xdg-open'
 
+# aliases for owl related tasks
 alias owl='ssh paul@dev'
+alias vsiron='code ~/owl/owlpractice/ironman/'
+alias vsclinic='code ~/owl/locals/clinicportal/'
+alias vsclient='code ~/owl/owlpractice/clientportal/'
+alias ysl='cd ~/owl/locals/clinicportal/ && yarn start:paul'
+
+# Move a js file to a ts file
+function mvts () { \
+        [ -z $1 ] && echo 'No file supplied' exit 0; \
+        git mv $1 $(echo "$1" | sed 's/.js$/.ts/'); \
+    }
+
+# Move a js file to a tsx file
+function mvtsx () { \
+        [ -z $1 ] && echo 'No file supplied' exit 0; \
+        git mv $1 $(echo "$1" | sed 's/.js$/.tsx/'); \
+    }
+
 
 # sourcing autojump script
 source /etc/profile.d/autojump.bash 
