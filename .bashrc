@@ -38,10 +38,6 @@ alias prev='playerctl previous'
 # git aliases
 alias gs='git status'
 
-# iex alias for mix projets (elixir tool)
-alias iexs='iex -S mix'
-alias mixc='mix compile'
-
 # alias for backing up dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 
