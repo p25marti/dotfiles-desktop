@@ -39,7 +39,7 @@ alias prev='playerctl previous'
 alias gs='git status'
 
 # alias for backing up dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+alias config='git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 
 # alias that opens a file with the default program that is assigned to its mimetype.
 alias open='xdg-open'
