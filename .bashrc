@@ -53,16 +53,15 @@ alias ysl='cd ~/owl/locals/clinicportal/ && yarn start:paul'
 
 # Move a js file to a ts file
 function mvts () { \
-        [ -z $1 ] && echo 'No file supplied' exit 0; \
-        git mv $1 $(echo "$1" | sed 's/.js$/.ts/'); \
-    }
+    [ -z $1 ] && echo 'No file supplied' exit 0; \
+    git mv $1 $(echo "$1" | sed 's/.js$/.ts/'); \
+}
 
 # Move a js file to a tsx file
 function mvtsx () { \
-        [ -z $1 ] && echo 'No file supplied' exit 0; \
-        git mv $1 $(echo "$1" | sed 's/.js$/.tsx/'); \
-    }
-
+    [ -z $1 ] && echo 'No file supplied' exit 0; \
+    git mv $1 $(echo "$1" | sed 's/.js$/.tsx/'); \
+}
 
 # sourcing autojump script
 source /etc/profile.d/autojump.bash 
