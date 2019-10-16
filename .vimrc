@@ -12,7 +12,6 @@ set shiftwidth=4 "ensures that indent, >>, moves 4 spaces"
 colorscheme molokai
 set colorcolumn=90
 set foldmethod=indent "adds a fold for every block of code that is indented"
-set tgc
 hi Normal guibg=NONE ctermbg=NONE
 
 let g:airline#extensions#tabline#enabled = 1
