@@ -36,7 +36,7 @@ font pango:Hack 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -79,6 +79,9 @@ bindsym $mod+shift+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
+# global fullscreen: across all monitors
+bindsym $mod+shift+f fullscreen toggle global
+
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
@@ -109,7 +112,12 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse set Master -q 5%-
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse set Master -q 5%+
 
-bindsym $mod+BackSpace exec termite -e htop
+bindsym $mod+BackSpace exec kitty -e htop
+
+# old version
+# bindsym --release $mod+apostrophe exec scrot --select
+bindsym --release $mod+apostrophe exec flameshot gui
+bindsym --release $mod+Shift+apostrophe exec peek
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -176,6 +184,8 @@ assign [class="Thunderbird"] $ws2
 for_window [class="Spotify"] move to workspace $ws9
 assign [class="Spotify"] $ws9
 
+# jump to urgent window
+bindsym $mod+x [urgent=latest] focus
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -236,3 +246,5 @@ exec --no-startup-id imwheel
 exec --no-startup-id spotify
 exec --no-startup-id thunderbird
 exec --no-startup-id slack
+exec --no-startup-id syncthing --no-browser
+exec --no-startup-id autokey-gtk
