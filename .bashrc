@@ -12,11 +12,13 @@ alias df='df -h'
 
 alias ..="cd .."
 alias ...="cd ../.."
-alias ...="cd ../../.."
-alias ...="cd ../../../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
 alias ~='cd ~'
 alias ff='find . -type f -name '
+
+alias clear='clear -x'
 
 # for displaying git branch in bash prompt
 parse_git_branch() {
@@ -24,9 +26,8 @@ parse_git_branch() {
 }
 
 
-PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]:\[\033[35m\]\$(parse_git_branch)\[\033[m\]\$ "
+PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]:\[\033[35m\]\$(parse_git_branch)\[\033[m\] -> "
 set -o vi
-
 export EDITOR=vim
 
 # music commands for easy manipulatin of spotify
@@ -79,5 +80,46 @@ export TERM=xterm-color
 # function for opening books as a background process
 background() { xdg-open "$@" &>/dev/null & }
 
+# get first branch that matches some string
+change() { 
+    git checkout $(git branch | grep $@ | head -n 1)
+}
+
 # https://github.com/brianm/venv
 source ~/.config/venv.bash
+
+# display a design quote of the day. Unfortunately API has gone down.
+# python ~/.config/daily-design-quotes/quotes.py
+
+# last branches that you checked out
+alias brs="git for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/"
+
+# syntax highlighting for less
+export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
+export LESS='-R '
+
+alias sourcebashrc="source ~/.bashrc"
+alias vimbashrc="vim ~/.bashrc"
+
+alias branchchanges="git show master..HEAD"
+alias upush="git push -u origin HEAD"
+
+# Docker stuff
+alias lzd="lazydocker"
+docker-attach() {
+    docker exec -it $1 /bin/bash
+}
+
+
+eval "$(thefuck --alias)"
+
+runjanus() {
+    docker run \
+        -p 80:80 \
+        -p 443:443 \
+        -p 7088:7088 \
+        -p 8088:8088 \
+        -p 8089:8089 \
+        -p 10000-10200:10000-10200 \
+        p25marti/janus-gateway-bionic
+}
