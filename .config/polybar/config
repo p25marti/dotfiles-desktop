@@ -17,13 +17,14 @@
 trans = #00000000
 white = #FFFFFF
 black = #000000
+red   = #FF0000
 
 bg = #1F1F1F
 fg = #FFFFFF
 fg-alt = #A9ABB0
 
 acolor = #FFFFFF
-curgent = #EF5350
+curgent = #DB324D
 coccupied = #42A5F5
 
 shade1 = #1B5E20
@@ -95,6 +96,10 @@ label-visible-background = ${color.shade2}
 
 label-unfocused = %index%
 label-unfocused-padding = 1
+
+label-urgent = %index%
+label-urgent-background = ${color.red}
+label-urgent-padding = 1
 
 [module/volume]
 type = internal/alsa
