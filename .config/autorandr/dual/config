@@ -11,4 +11,4 @@ rate 60.00
 output DVI-D-0
 mode 1920x1080
 pos 1920x0
-rate 60.00
+rate 144.00
