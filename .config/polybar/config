@@ -61,8 +61,8 @@ font-4 = "Noto Sans Symbols2:pixelsize=10;3"
 [bar/primary]
 inherit = bar/main
 monitor = DVI-D-0
-modules-left = i3 
-modules-center = spotify 
+modules-left = i3
+modules-center = spotify
 modules-right = vpn memory cpu volume network date
 
 [bar/secondary]
@@ -74,7 +74,7 @@ modules-center = spotify
 ;==========================================================
 ;== Module Location ========================================================
 
- 
+
 ;== Modules ========================================================
 
 [module/i3]
@@ -177,7 +177,7 @@ type = custom/script
 interval = 1
 format-prefix = "🎧 "
 format = <label>
-exec = python ~/.config/polybar/scripts/spotify_status.py -f '{artist}: {song}'
+exec = python ~/.config/polybar/scripts/spotify_status.py -f "{artist}: {song}"
 
 ;== EOF ========================================================
 ; vim:ft=dosini

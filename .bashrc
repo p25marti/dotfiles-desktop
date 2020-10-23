@@ -22,7 +22,7 @@ alias prev='playerctl previous'
 alias open='xdg-open'
 alias weather='curl wttr.in/toronto'
 
-alias update="sudo pikaur -Syu"
+alias update="sudo pacman -Syu"
 
 alias config='git --git-dir=$HOME/.myconf/ --work-tree=$HOME' # alias for backing up dotfiles
 alias gs='git status'
@@ -37,6 +37,7 @@ alias vsclinic='code ~/owl/locals/clinicportal/'
 alias vsclient='code ~/owl/owlpractice/clientportal/'
 alias ysl='cd ~/owl/locals/clinicportal/ && yarn start:paul'
 alias book='yarn workspace frontend start:storybook'
+alias startvideo='ANNOUNCE_IP=99.252.206.33 WEBSOCKET_ENDPOINT=wss://api-video-paul.owlpractice.ca API_ENDPOINT=https://api-video-paul.owlpractice.ca yarn start:all'
 
 set -o vi
 export EDITOR=vim
@@ -44,7 +45,7 @@ export TERM=xterm-color
 
 source /etc/profile.d/autojump.bash # sourcing autojump script
 source ~/.config/venv.bash # https://github.com/brianm/venv
-source /usr/share/nvm/init-nvm.sh
+source /usr/share/nvm/init-nvm.sh # source nvm
 
 # function for opening books as a background process
 background() { xdg-open "$@" &>/dev/null & }
@@ -62,4 +63,24 @@ parse_git_branch() {
      git branch 2>/dev/null | grep '^*' | colrm 1 2
 }
 
+sync() {
+    while true; do
+        rsync \
+            -avz \
+            -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /home/chance/.ssh/id_rsa_temp" \
+            --progress \
+            --exclude 'node_modules' \
+            --exclude 'frontend/node_modules' \
+            --exclude 'backend/node_modules' \
+            /home/chance/git/videoexchangeserver \
+            paul@dev:/home/paul/git/videoexchangeserver-sync;
+        sleep 1;
+    done
+}
+
+phew () {
+    echo "dunstify -u critical 'Phew!' '$1'" | at ${@:2}
+}
+
 PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]:\[\033[35m\]\$(parse_git_branch)\[\033[m\] -> "
+

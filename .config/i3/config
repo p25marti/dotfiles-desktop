@@ -46,6 +46,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run -fn 'Fira Mono-10'
 bindsym $mod+p exec --no-startup-id i3-dmenu-desktop --dmenu 'dmenu -i -fn "Fira Mono-10"'
 bindsym $mod+c exec clipmenu -fn 'Fira Mono-10'
+bindsym $mod+g exec --no-startup-id ~/.config/i3/dmenu_duckduckgo_search.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -242,6 +243,7 @@ exec --no-startup-id feh --bg-fill ~/images/wallpaper.jpg
 #exec --no-startup-id feh --bg-fill ~/images/wallpaper/wallpaper7.jpg
 exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id compton
+exec autorandr dual
 
 # programs
 exec --no-startup-id imwheel
@@ -250,3 +252,4 @@ exec --no-startup-id thunderbird
 exec --no-startup-id slack
 exec --no-startup-id autokey-gtk
 exec --no-startup-id clipmenud
+exec --no-startup-id atd
