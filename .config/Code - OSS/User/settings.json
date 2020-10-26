@@ -1,0 +1,131 @@
+{
+    "gitlens.views.repositories.location": "scm",
+    "gitlens.views.fileHistory.location": "scm",
+    "gitlens.views.lineHistory.location": "scm",
+    "gitlens.views.compare.location": "scm",
+    "gitlens.views.search.location": "scm",
+    "window.zoomLevel": 0,
+    "editor.fontFamily": "'Fira Code', 'Hack', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 11,
+    "editor.tabSize": 2,
+    "editor.rulers": [
+        92,
+        99
+    ],
+    "files.insertFinalNewline": true,
+    "python.pythonPath": "~/.venv/moltres/",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "node/**": true,
+        "tmp": true
+    },
+    "files.watcherExclude": {
+        "**/*.pyc": true,
+        "node/**": true
+    },
+    "search.exclude": {
+        "**/*.pyc": true,
+        "node/**": true
+    },
+    "python.venvPath": "~/.venv",
+    "editor.renderWhitespace": "all",
+    "editor.formatOnSave": false,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "vim.foldfix": true,
+    "vim.useSystemClipboard": false,
+    "color-highlight.enable": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.fontLigatures": true,
+    "window.titleBarStyle": "custom",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.colorTheme": "Oceanic Plus",
+    "editor.lineNumbers": "relative",
+    "zenMode.hideTabs": false,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "trailing-spaces.highlightCurrentLine": false,
+    "explorer.confirmDelete": false,
+    "cSpell.userWords": [
+        "Bowser",
+        "aiortc",
+        "asyncio",
+        "canvas",
+        "downlevel",
+        "element",
+        "sctp",
+        "streamable",
+        "streamable canvas element"
+    ],
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "importSorter.importStringConfiguration.hasSemicolon": true,
+    "importSorter.importStringConfiguration.tabSize": 2,
+    "importSorter.importStringConfiguration.trailingComma": "multiLine",
+    "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.type": "words",
+    "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 1,
+    "importSorter.sortConfiguration.customOrderingRules.rules": [
+        {
+            "regex": "^react",
+            "orderLevel": 10
+        },
+        {
+            "regex": "^types",
+            "orderLevel": 30
+        },
+        {
+            "regex": "^constants",
+            "orderLevel": 40
+        },
+        {
+            "regex": "^hooks",
+            "orderLevel": 50
+        },
+        {
+            "regex": "^styles",
+            "orderLevel": 60
+        },
+        {
+            "regex": "^utils",
+            "orderLevel": 70
+        },
+        {
+            "regex": "^store",
+            "orderLevel": 80
+        },
+        {
+            "regex": "^components",
+            "orderLevel": 90
+        },
+        {
+            "regex": "^containers",
+            "orderLevel": 100
+        },
+        {
+            "regex": "^assets",
+            "orderLevel": 110
+        }
+],
+"editor.minimap.enabled": false,
+"diffEditor.renderSideBySide": false,
+"javascript.updateImportsOnFileMove.enabled": "always",
+"typescript.tsdk": ".yarn/sdks/typescript",
+
+}
